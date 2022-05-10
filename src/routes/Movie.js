@@ -12,6 +12,7 @@ const getApiInfo = async () => {
     const apiInfo = await apiUrl.data.results.map(el => {
         return {
             id: el.id,
+            genre_ids: [el.genre_ids.map(el => el)],
             original_language: el.original_language,
             original_title: el.original_title,
             overview: el.overview,
